@@ -3,24 +3,24 @@
     <name>AboutDialog</name>
     <message>
         <location filename="../forms/aboutdialog.ui" line="+14"/>
-        <source>About ShadowCoin</source>
-        <translation>Om ShadowCoin</translation>
+        <source>About SeedCoin</source>
+        <translation>Om SeedCoin</translation>
     </message>
     <message>
         <location line="+39"/>
-        <source>&lt;b&gt;ShadowCoin&lt;/b&gt; version</source>
-        <translation>&lt;b&gt;ShadowCoin&lt;/b&gt; version</translation>
+        <source>&lt;b&gt;SeedCoin&lt;/b&gt; version</source>
+        <translation>&lt;b&gt;SeedCoin&lt;/b&gt; version</translation>
     </message>
     <message>
         <location line="+41"/>
         <source>Copyright © 2009-2014 The Bitcoin developers
 Copyright © 2012-2014 The NovaCoin developers
 Copyright © 2014 The BlackCoin developers
-Copyright © 2014 The ShadowCoin developers</source>
+Copyright © 2014 The SeedCoin developers</source>
         <translation>Copyright © 2009-2014 The Bitcoin developers
 Copyright © 2012-2014 The NovaCoin developers
 Copyright © 2014 The BlackCoin developers
-Copyright © 2014 The ShadowCoin developers</translation>
+Copyright © 2014 The SeedCoin developers</translation>
     </message>
     <message>
         <location line="+15"/>
@@ -67,8 +67,8 @@ Produktet indeholder software, som er udviklet af OpenSSL Project til brug i Ope
     </message>
     <message>
         <location line="-46"/>
-        <source>These are your ShadowCoin addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
-        <translation>Dette er dine ShadowCoin adresser til at modtage betalinger. Du ønsker måske at give en anden en til af hver afsender, så du kan holde styr på hvem der betaler dig.</translation>
+        <source>These are your SeedCoin addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
+        <translation>Dette er dine SeedCoin adresser til at modtage betalinger. Du ønsker måske at give en anden en til af hver afsender, så du kan holde styr på hvem der betaler dig.</translation>
     </message>
     <message>
         <location line="+60"/>
@@ -82,8 +82,8 @@ Produktet indeholder software, som er udviklet af OpenSSL Project til brug i Ope
     </message>
     <message>
         <location line="+11"/>
-        <source>Sign a message to prove you own a ShadowCoin address</source>
-        <translation>Signerer en meddelelse for at bevise du ejer en ShadowCoin adresse</translation>
+        <source>Sign a message to prove you own a SeedCoin address</source>
+        <translation>Signerer en meddelelse for at bevise du ejer en SeedCoin adresse</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -97,8 +97,8 @@ Produktet indeholder software, som er udviklet af OpenSSL Project til brug i Ope
     </message>
     <message>
         <location line="-14"/>
-        <source>Verify a message to ensure it was signed with a specified ShadowCoin address</source>
-        <translation>Bekræft en meddelelse for at sikre, den blev underskrevet med en specificeret ShadowCoin adresse</translation>
+        <source>Verify a message to ensure it was signed with a specified SeedCoin address</source>
+        <translation>Bekræft en meddelelse for at sikre, den blev underskrevet med en specificeret SeedCoin adresse</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -265,8 +265,8 @@ Produktet indeholder software, som er udviklet af OpenSSL Project til brug i Ope
     </message>
     <message>
         <location line="-58"/>
-        <source>ShadowCoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your coins from being stolen by malware infecting your computer.</source>
-        <translation>ShadowCoin lukker nu for at afslutte krypteringen. Husk at en krypteret  tegnebog ikke fuldt ud beskytter dine mønter mod at blive stjålet af malware som har inficeret din computer.</translation>
+        <source>SeedCoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your coins from being stolen by malware infecting your computer.</source>
+        <translation>SeedCoin lukker nu for at afslutte krypteringen. Husk at en krypteret  tegnebog ikke fuldt ud beskytter dine mønter mod at blive stjålet af malware som har inficeret din computer.</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -379,8 +379,8 @@ Produktet indeholder software, som er udviklet af OpenSSL Project til brug i Ope
     </message>
     <message>
         <location line="+4"/>
-        <source>Show information about ShadowCoin</source>
-        <translation>Vis oplysninger om ShadowCoin</translation>
+        <source>Show information about SeedCoin</source>
+        <translation>Vis oplysninger om SeedCoin</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -429,13 +429,13 @@ Produktet indeholder software, som er udviklet af OpenSSL Project til brug i Ope
     </message>
     <message>
         <location line="-62"/>
-        <source>Send coins to a ShadowCoin address</source>
-        <translation>Send mønter til en ShadowCoin adresse</translation>
+        <source>Send coins to a SeedCoin address</source>
+        <translation>Send mønter til en SeedCoin adresse</translation>
     </message>
     <message>
         <location line="+45"/>
-        <source>Modify configuration options for ShadowCoin</source>
-        <translation>Ændre indstillingsmuligheder for ShadowCoin</translation>
+        <source>Modify configuration options for SeedCoin</source>
+        <translation>Ændre indstillingsmuligheder for SeedCoin</translation>
     </message>
     <message>
         <location line="+18"/>
@@ -474,8 +474,8 @@ Produktet indeholder software, som er udviklet af OpenSSL Project til brug i Ope
     </message>
     <message>
         <location line="-200"/>
-        <source>ShadowCoin</source>
-        <translation>ShadowCoin</translation>
+        <source>SeedCoin</source>
+        <translation>SeedCoin</translation>
     </message>
     <message>
         <location line="+0"/>
@@ -484,8 +484,8 @@ Produktet indeholder software, som er udviklet af OpenSSL Project til brug i Ope
     </message>
     <message>
         <location line="+178"/>
-        <source>&amp;About ShadowCoin</source>
-        <translation>&amp;Om ShadowCoin</translation>
+        <source>&amp;About SeedCoin</source>
+        <translation>&amp;Om SeedCoin</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -541,13 +541,13 @@ Produktet indeholder software, som er udviklet af OpenSSL Project til brug i Ope
     <message>
         <location line="+0"/>
         <location line="+60"/>
-        <source>ShadowCoin client</source>
-        <translation>ShadowCoin klient</translation>
+        <source>SeedCoin client</source>
+        <translation>SeedCoin klient</translation>
     </message>
     <message numerus="yes">
         <location line="+70"/>
-        <source>%n active connection(s) to ShadowCoin network</source>
-        <translation><numerusform>%n aktiv forbindelse til ShadowCoin netværk</numerusform><numerusform>%n aktive forbindelser til ShadowCoin netværk</numerusform></translation>
+        <source>%n active connection(s) to SeedCoin network</source>
+        <translation><numerusform>%n aktiv forbindelse til SeedCoin netværk</numerusform><numerusform>%n aktive forbindelser til SeedCoin netværk</numerusform></translation>
     </message>
     <message>
         <location line="+40"/>
@@ -661,8 +661,8 @@ Adresse: %4
     <message>
         <location line="-15"/>
         <location line="+15"/>
-        <source>URI can not be parsed! This can be caused by an invalid ShadowCoin address or malformed URI parameters.</source>
-        <translation>URI kan ikke tolkes! Dette kan skyldes en ugyldig ShadowCoin adresse eller misdannede URI parametre.</translation>
+        <source>URI can not be parsed! This can be caused by an invalid SeedCoin address or malformed URI parameters.</source>
+        <translation>URI kan ikke tolkes! Dette kan skyldes en ugyldig SeedCoin adresse eller misdannede URI parametre.</translation>
     </message>
     <message>
         <location line="+18"/>
@@ -721,7 +721,7 @@ Adresse: %4
     </message>
     <message>
         <location filename="../bitcoin.cpp" line="+109"/>
-        <source>A fatal error occurred. ShadowCoin can no longer continue safely and will quit.</source>
+        <source>A fatal error occurred. SeedCoin can no longer continue safely and will quit.</source>
         <translation>Der opstod en fejl under forsøg på at gemme dataene i tegnebogen til den nye placering.</translation>
     </message>
 </context>
@@ -1055,8 +1055,8 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     </message>
     <message>
         <location line="-5"/>
-        <source>The entered address &quot;%1&quot; is not a valid ShadowCoin address.</source>
-        <translation>Den indtastede adresse &quot;%1&quot; er ikke en gyldig ShadowCoin adresse.</translation>
+        <source>The entered address &quot;%1&quot; is not a valid SeedCoin address.</source>
+        <translation>Den indtastede adresse &quot;%1&quot; er ikke en gyldig SeedCoin adresse.</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -1074,8 +1074,8 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     <message>
         <location filename="../guiutil.cpp" line="+420"/>
         <location line="+12"/>
-        <source>ShadowCoin-Qt</source>
-        <translation>ShadowCoin-Qt</translation>
+        <source>SeedCoin-Qt</source>
+        <translation>SeedCoin-Qt</translation>
     </message>
     <message>
         <location line="-12"/>
@@ -1147,13 +1147,13 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     </message>
     <message>
         <location line="+31"/>
-        <source>Automatically start ShadowCoin after logging in to the system.</source>
-        <translation>Automatisk start ShadowCoin efter at have logget ind på systemet.</translation>
+        <source>Automatically start SeedCoin after logging in to the system.</source>
+        <translation>Automatisk start SeedCoin efter at have logget ind på systemet.</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>&amp;Start ShadowCoin on system login</source>
-        <translation>&amp;Start ShadowCoin ved systems login</translation>
+        <source>&amp;Start SeedCoin on system login</source>
+        <translation>&amp;Start SeedCoin ved systems login</translation>
     </message>
     <message>
         <location line="+7"/>
@@ -1172,8 +1172,8 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     </message>
     <message>
         <location line="+6"/>
-        <source>Automatically open the ShadowCoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Automatisk åbne ShadowCoin klient-port på routeren. Dette virker kun, når din router understøtter UPnP og er det er aktiveret.</translation>
+        <source>Automatically open the SeedCoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Automatisk åbne SeedCoin klient-port på routeren. Dette virker kun, når din router understøtter UPnP og er det er aktiveret.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1182,8 +1182,8 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     </message>
     <message>
         <location line="+7"/>
-        <source>Connect to the ShadowCoin network through a SOCKS proxy (e.g. when connecting through Tor).</source>
-        <translation>Opret forbindelse til ShadowCoin netværk via en SOCKS proxy (fx ved tilslutning gennem Tor).</translation>
+        <source>Connect to the SeedCoin network through a SOCKS proxy (e.g. when connecting through Tor).</source>
+        <translation>Opret forbindelse til SeedCoin netværk via en SOCKS proxy (fx ved tilslutning gennem Tor).</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1257,8 +1257,8 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     </message>
     <message>
         <location line="+13"/>
-        <source>The user interface language can be set here. This setting will take effect after restarting ShadowCoin.</source>
-        <translation>Sproget i brugergrænsefladen kan indstilles her. Denne indstilling vil træde i kraft efter genstart af ShadowCoin tegnebog.</translation>
+        <source>The user interface language can be set here. This setting will take effect after restarting SeedCoin.</source>
+        <translation>Sproget i brugergrænsefladen kan indstilles her. Denne indstilling vil træde i kraft efter genstart af SeedCoin tegnebog.</translation>
     </message>
     <message>
         <location line="+11"/>
@@ -1272,8 +1272,8 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     </message>
     <message>
         <location line="+9"/>
-        <source>Whether to show ShadowCoin addresses in the transaction list or not.</source>
-        <translation>Få vist ShadowCoin adresser på listen over transaktioner eller ej.</translation>
+        <source>Whether to show SeedCoin addresses in the transaction list or not.</source>
+        <translation>Få vist SeedCoin adresser på listen over transaktioner eller ej.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1319,8 +1319,8 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     <message>
         <location line="-9"/>
         <location line="+9"/>
-        <source>This setting will take effect after restarting ShadowCoin.</source>
-        <translation>Denne indstilling vil træde i kraft efter genstart af ShadowCoin.</translation>
+        <source>This setting will take effect after restarting SeedCoin.</source>
+        <translation>Denne indstilling vil træde i kraft efter genstart af SeedCoin.</translation>
     </message>
     <message>
         <location line="+29"/>
@@ -1338,8 +1338,8 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     <message>
         <location line="+33"/>
         <location line="+231"/>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the ShadowCoin network after a connection is established, but this process has not completed yet.</source>
-        <translation>De viste oplysninger kan være forældet. Din tegnebog synkroniserer automatisk med ShadowCoin netværket efter en forbindelse er etableret, men denne proces er ikke afsluttet endnu.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the SeedCoin network after a connection is established, but this process has not completed yet.</source>
+        <translation>De viste oplysninger kan være forældet. Din tegnebog synkroniserer automatisk med SeedCoin netværket efter en forbindelse er etableret, men denne proces er ikke afsluttet endnu.</translation>
     </message>
     <message>
         <location line="-160"/>
@@ -1554,8 +1554,8 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     </message>
     <message>
         <location line="+7"/>
-        <source>Show the ShadowCoin-Qt help message to get a list with possible ShadowCoin command-line options.</source>
-        <translation>Vis ShadowCoin-Qt hjælpe besked for at få en liste med mulige ShadowCoin kommandolinjeparametre.</translation>
+        <source>Show the SeedCoin-Qt help message to get a list with possible SeedCoin command-line options.</source>
+        <translation>Vis SeedCoin-Qt hjælpe besked for at få en liste med mulige SeedCoin kommandolinjeparametre.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1574,13 +1574,13 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     </message>
     <message>
         <location line="-104"/>
-        <source>ShadowCoin - Debug window</source>
-        <translation>ShadowCoin - Debug vindue</translation>
+        <source>SeedCoin - Debug window</source>
+        <translation>SeedCoin - Debug vindue</translation>
     </message>
     <message>
         <location line="+25"/>
-        <source>ShadowCoin Core</source>
-        <translation>ShadowCoin Kerne</translation>
+        <source>SeedCoin Core</source>
+        <translation>SeedCoin Kerne</translation>
     </message>
     <message>
         <location line="+279"/>
@@ -1589,8 +1589,8 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     </message>
     <message>
         <location line="+7"/>
-        <source>Open the ShadowCoin debug log file from the current data directory. This can take a few seconds for large log files.</source>
-        <translation>Åbn ShadowCoin debug logfilen fra den nuværende data mappe. Dette kan tage et par sekunder for store logfiler.</translation>
+        <source>Open the SeedCoin debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <translation>Åbn SeedCoin debug logfilen fra den nuværende data mappe. Dette kan tage et par sekunder for store logfiler.</translation>
     </message>
     <message>
         <location line="+102"/>
@@ -1599,8 +1599,8 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     </message>
     <message>
         <location filename="../rpcconsole.cpp" line="-33"/>
-        <source>Welcome to the ShadowCoin RPC console.</source>
-        <translation>Velkommen til ShadowCoin RPC-konsol.</translation>
+        <source>Welcome to the SeedCoin RPC console.</source>
+        <translation>Velkommen til SeedCoin RPC-konsol.</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -1758,8 +1758,8 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     </message>
     <message>
         <location filename="../sendcoinsdialog.cpp" line="-173"/>
-        <source>Enter a ShadowCoin address (e.g. SXywGBZBowrppUwwNUo1GCRDTibzJi7g2M)</source>
-        <translation>Indtast en ShadowCoin-adresse (f.eks SXywGBZBowrppUwwNUo1GCRDTibzJi7g2M)</translation>
+        <source>Enter a SeedCoin address (e.g. sXywGBZBowrppUwwNUo1GCRDTibzJi7g2M)</source>
+        <translation>Indtast en SeedCoin-adresse (f.eks sXywGBZBowrppUwwNUo1GCRDTibzJi7g2M)</translation>
     </message>
     <message>
         <location line="+15"/>
@@ -1858,8 +1858,8 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     </message>
     <message>
         <location line="+251"/>
-        <source>WARNING: Invalid ShadowCoin address</source>
-        <translation>ADVARSEL: Ugyldig ShadowCoin adresse</translation>
+        <source>WARNING: Invalid SeedCoin address</source>
+        <translation>ADVARSEL: Ugyldig SeedCoin adresse</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -1902,8 +1902,8 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     </message>
     <message>
         <location line="+18"/>
-        <source>The address to send the payment to  (e.g. SXywGBZBowrppUwwNUo1GCRDTibzJi7g2M)</source>
-        <translation>Adressen til at sende betalingen til (f.eks SXywGBZBowrppUwwNUo1GCRDTibzJi7g2M)</translation>
+        <source>The address to send the payment to  (e.g. sXywGBZBowrppUwwNUo1GCRDTibzJi7g2M)</source>
+        <translation>Adressen til at sende betalingen til (f.eks sXywGBZBowrppUwwNUo1GCRDTibzJi7g2M)</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -1932,8 +1932,8 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     </message>
     <message>
         <location filename="../sendcoinsentry.cpp" line="+1"/>
-        <source>Enter a ShadowCoin address (e.g. SXywGBZBowrppUwwNUo1GCRDTibzJi7g2M)</source>
-        <translation>Indtast en ShadowCoin-adresse (f.eks SXywGBZBowrppUwwNUo1GCRDTibzJi7g2M)</translation>
+        <source>Enter a SeedCoin address (e.g. sXywGBZBowrppUwwNUo1GCRDTibzJi7g2M)</source>
+        <translation>Indtast en SeedCoin-adresse (f.eks sXywGBZBowrppUwwNUo1GCRDTibzJi7g2M)</translation>
     </message>
 </context>
 <context>
@@ -1956,8 +1956,8 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     </message>
     <message>
         <location line="+18"/>
-        <source>The address to sign the message with (e.g. SXywGBZBowrppUwwNUo1GCRDTibzJi7g2M)</source>
-        <translation>Adresse til at underskrive meddelelsen med (f.eks SXywGBZBowrppUwwNUo1GCRDTibzJi7g2M)</translation>
+        <source>The address to sign the message with (e.g. sXywGBZBowrppUwwNUo1GCRDTibzJi7g2M)</source>
+        <translation>Adresse til at underskrive meddelelsen med (f.eks sXywGBZBowrppUwwNUo1GCRDTibzJi7g2M)</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -1993,8 +1993,8 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     </message>
     <message>
         <location line="+21"/>
-        <source>Sign the message to prove you own this ShadowCoin address</source>
-        <translation>Underskriv brevet for at bevise du ejer denne ShadowCoin adresse</translation>
+        <source>Sign the message to prove you own this SeedCoin address</source>
+        <translation>Underskriv brevet for at bevise du ejer denne SeedCoin adresse</translation>
     </message>
     <message>
         <location line="+17"/>
@@ -2020,13 +2020,13 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     </message>
     <message>
         <location line="+21"/>
-        <source>The address the message was signed with (e.g. SXywGBZBowrppUwwNUo1GCRDTibzJi7g2M)</source>
-        <translation>Adressen meddelelse blev underskrevet med (f.eks SXywGBZBowrppUwwNUo1GCRDTibzJi7g2M)</translation>
+        <source>The address the message was signed with (e.g. sXywGBZBowrppUwwNUo1GCRDTibzJi7g2M)</source>
+        <translation>Adressen meddelelse blev underskrevet med (f.eks sXywGBZBowrppUwwNUo1GCRDTibzJi7g2M)</translation>
     </message>
     <message>
         <location line="+40"/>
-        <source>Verify the message to ensure it was signed with the specified ShadowCoin address</source>
-        <translation>Kontroller meddelelsen for at sikre, at den blev indgået med den angivne ShadowCoin adresse</translation>
+        <source>Verify the message to ensure it was signed with the specified SeedCoin address</source>
+        <translation>Kontroller meddelelsen for at sikre, at den blev indgået med den angivne SeedCoin adresse</translation>
     </message>
     <message>
         <location line="+17"/>
@@ -2036,8 +2036,8 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     <message>
         <location filename="../signverifymessagedialog.cpp" line="+27"/>
         <location line="+3"/>
-        <source>Enter a ShadowCoin address (e.g. SXywGBZBowrppUwwNUo1GCRDTibzJi7g2M)</source>
-        <translation>Indtast en ShadowCoin-adresse (f.eks SXywGBZBowrppUwwNUo1GCRDTibzJi7g2M)</translation>
+        <source>Enter a SeedCoin address (e.g. sXywGBZBowrppUwwNUo1GCRDTibzJi7g2M)</source>
+        <translation>Indtast en SeedCoin-adresse (f.eks sXywGBZBowrppUwwNUo1GCRDTibzJi7g2M)</translation>
     </message>
     <message>
         <location line="-2"/>
@@ -2046,8 +2046,8 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Enter ShadowCoin signature</source>
-        <translation>Indtast ShadowCoin underskrift</translation>
+        <source>Enter SeedCoin signature</source>
+        <translation>Indtast SeedCoin underskrift</translation>
     </message>
     <message>
         <location line="+82"/>
@@ -2617,8 +2617,8 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     <name>bitcoin-core</name>
     <message>
         <location filename="../bitcoinstrings.cpp" line="+33"/>
-        <source>ShadowCoin version</source>
-        <translation>ShadowCoin version</translation>
+        <source>SeedCoin version</source>
+        <translation>SeedCoin version</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2627,8 +2627,8 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Send command to -server or shadowcoind</source>
-        <translation>Send kommando til-server eller shadowcoind</translation>
+        <source>Send command to -server or SeedCoind</source>
+        <translation>Send kommando til-server eller SeedCoind</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2647,13 +2647,13 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Specify configuration file (default: shadowcoin.conf)</source>
-        <translation>Angiv konfigurationsfil (default: shadowcoin.conf)</translation>
+        <source>Specify configuration file (default: SeedCoin.conf)</source>
+        <translation>Angiv konfigurationsfil (default: SeedCoin.conf)</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Specify pid file (default: shadowcoind.pid)</source>
-        <translation>Angiv pid fil (standard: shadowcoind.pid)</translation>
+        <source>Specify pid file (default: SeedCoind.pid)</source>
+        <translation>Angiv pid fil (standard: SeedCoind.pid)</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -2677,8 +2677,8 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     </message>
     <message>
         <location line="+6"/>
-        <source>Listen for connections on &lt;port&gt; (default: 51737 or testnet: 51997)</source>
-        <translation>Lyt efter forbindelser på &lt;port&gt; (default: 51737 eller Testnet: 51997)</translation>
+        <source>Listen for connections on &lt;port&gt; (default: 15330 or testnet: 15335)</source>
+        <translation>Lyt efter forbindelser på &lt;port&gt; (default: 15330 eller Testnet: 15335)</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2737,8 +2737,8 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     </message>
     <message>
         <location line="-87"/>
-        <source>Listen for JSON-RPC connections on &lt;port&gt; (default: 51736 or testnet: 51996)</source>
-        <translation>Spor efter JSON-RPC-forbindelser på &lt;port&gt; (default: 51736 eller Testnet: 51996)</translation>
+        <source>Listen for JSON-RPC connections on &lt;port&gt; (default: 25330 or testnet: 25335)</source>
+        <translation>Spor efter JSON-RPC-forbindelser på &lt;port&gt; (default: 25330 eller Testnet: 25335)</translation>
     </message>
     <message>
         <location line="-11"/>
@@ -2802,8 +2802,8 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     </message>
     <message>
         <location line="+61"/>
-        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong ShadowCoin will not work properly.</source>
-        <translation>Advarsel: Kontroller venligst, at computerens dato og klokkeslæt er korrekt! Hvis dit ur er forkert vil ShadowCoin ikke fungere korrekt.</translation>
+        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong SeedCoin will not work properly.</source>
+        <translation>Advarsel: Kontroller venligst, at computerens dato og klokkeslæt er korrekt! Hvis dit ur er forkert vil SeedCoin ikke fungere korrekt.</translation>
     </message>
     <message>
         <location line="-31"/>
@@ -2992,24 +2992,24 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
         <source>%s, you must set a rpcpassword in the configuration file:
  %s
 It is recommended you use the following random password:
-rpcuser=shadowcoinrpc
+rpcuser=SeedCoinrpc
 rpcpassword=%s
 (you do not need to remember this password)
 The username and password MUST NOT be the same.
 If the file does not exist, create it with owner-readable-only file permissions.
 It is also recommended to set alertnotify so you are notified of problems;
-for example: alertnotify=echo %%s | mail -s &quot;ShadowCoin Alert&quot; admin@foo.com
+for example: alertnotify=echo %%s | mail -s &quot;SeedCoin Alert&quot; admin@foo.com
 </source>
         <translation>% s, skal du indstille et rpcpassword i konfigurationsfilen: 
 % s 
 Det anbefales at bruge følgende tilfældig adgangskode: 
-rpcuser = shadowcoinrpc  
+rpcuser = SeedCoinrpc  
 rpcpassword =% s  
 (du behøver ikke at huske denne adgangskode)  
 Brugernavn og adgangskode må ikke være den samme.  
 Hvis filen ikke findes, skal du oprette den med filtilladelser ejer-læsbar-kun. 
 Det kan også anbefales at sætte alertnotify så du får besked om problemer; 
-for eksempel: alertnotify = echo%% s | mail-s &quot;ShadowCoin Alert&quot; admin@foo.com 
+for eksempel: alertnotify = echo%% s | mail-s &quot;SeedCoin Alert&quot; admin@foo.com 
 </translation>
     </message>
     <message>
@@ -3134,13 +3134,13 @@ for eksempel: alertnotify = echo%% s | mail-s &quot;ShadowCoin Alert&quot; admin
     </message>
     <message>
         <location line="+1"/>
-        <source>Cannot obtain a lock on data directory %s.  ShadowCoin is probably already running.</source>
-        <translation>Kan ikke få en lås på data mappe% s. ShadowCoin kører sikkert allerede.</translation>
+        <source>Cannot obtain a lock on data directory %s.  SeedCoin is probably already running.</source>
+        <translation>Kan ikke få en lås på data mappe% s. SeedCoin kører sikkert allerede.</translation>
     </message>
     <message>
         <location line="-98"/>
-        <source>ShadowCoin</source>
-        <translation>ShadowCoin</translation>
+        <source>SeedCoin</source>
+        <translation>SeedCoin</translation>
     </message>
     <message>
         <location line="+140"/>
@@ -3174,13 +3174,13 @@ for eksempel: alertnotify = echo%% s | mail-s &quot;ShadowCoin Alert&quot; admin
     </message>
     <message>
         <location line="+4"/>
-        <source>Error loading wallet.dat: Wallet requires newer version of ShadowCoin</source>
-        <translation>Fejl ved indlæsning af wallet.dat: Wallet kræver en nyere version af ShadowCoin</translation>
+        <source>Error loading wallet.dat: Wallet requires newer version of SeedCoin</source>
+        <translation>Fejl ved indlæsning af wallet.dat: Wallet kræver en nyere version af SeedCoin</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Wallet needed to be rewritten: restart ShadowCoin to complete</source>
-        <translation>Det er nødvendig for wallet at blive omskrevet: Genstart ShadowCoin for fuldføre</translation>
+        <source>Wallet needed to be rewritten: restart SeedCoin to complete</source>
+        <translation>Det er nødvendig for wallet at blive omskrevet: Genstart SeedCoin for fuldføre</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -3249,8 +3249,8 @@ for eksempel: alertnotify = echo%% s | mail-s &quot;ShadowCoin Alert&quot; admin
     </message>
     <message>
         <location line="+122"/>
-        <source>Unable to bind to %s on this computer. ShadowCoin is probably already running.</source>
-        <translation>Kunne ikke binde sig til% s på denne computer. ShadowCoin kører sikkert allerede.</translation>
+        <source>Unable to bind to %s on this computer. SeedCoin is probably already running.</source>
+        <translation>Kunne ikke binde sig til% s på denne computer. SeedCoin kører sikkert allerede.</translation>
     </message>
     <message>
         <location line="-97"/>

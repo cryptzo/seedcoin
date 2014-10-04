@@ -25,26 +25,36 @@ class CInv;
 class CRequestTracker;
 class CNode;
 
-static const int LAST_POW_BLOCK = 31000;
-static const int LAST_FAIR_LAUNCH_BLOCK = 120;
+static const int DAYS = 365;
+static const int BLOCK_DAY = 1440;
+static const int BLOCK_YEAR = DAYS * BLOCK_DAY;
+
+static const int LAST_POW_BLOCK = 10100;
+static const int LAST_FAIR_LAUNCH_BLOCK = 100;
+static const int LAST_POS_BLOCK_GERMINATION = LAST_POW_BLOCK;
+static const int LAST_POS_BLOCK_GROWTH = LAST_POW_BLOCK + (7 * BLOCK_DAY);
 
 static const unsigned int MAX_BLOCK_SIZE = 1000000;
 static const unsigned int MAX_BLOCK_SIZE_GEN = MAX_BLOCK_SIZE/2;
 static const unsigned int MAX_BLOCK_SIGOPS = MAX_BLOCK_SIZE/50;
 static const unsigned int MAX_ORPHAN_TRANSACTIONS = MAX_BLOCK_SIZE/100;
 static const unsigned int MAX_INV_SZ = 50000;
-static const int64_t MIN_TX_FEE = 10000;
+static const int64_t MIN_TX_FEE = 1000;
 static const int64_t MIN_RELAY_TX_FEE = MIN_TX_FEE;
 static const int64_t MAX_MONEY = 2000000000 * COIN;
-static const int64_t COIN_YEAR_REWARD = 2 * CENT; // 2% per year
+static const int64_t COIN_YEAR_REWARD = 1 * CENT; // 1% Per Year. Used during Mining period and as final staking amount
+static const int64_t MAX_COIN_YEAR_REWARD = 16 * CENT; // 16% interest during first year of maturity period.
+static const int64_t COIN_DAY_REWARD = 269 * DAYS * CENT; // 269% Daily during growth period
+
+static const int64_t ICO = 67.86 * COIN;
 
 inline bool MoneyRange(int64_t nValue) { return (nValue >= 0 && nValue <= MAX_MONEY); }
-// Threshold for nLockTime: below this value it is interpreted as block number, otherwise as UNIX timestamp.
+// Threshold for nLockTime: below this value it is as block number, otherwise as UNIX timestamp.
 static const unsigned int LOCKTIME_THRESHOLD = 500000000; // Tue Nov  5 00:53:20 1985 UTC
 
 
-static const uint256 hashGenesisBlock("0x00000eca234f07edc98aaf3f2a7b7478dc58992a9cd439323d099c6a590ca2bb");
-static const uint256 hashGenesisBlockTestNet("0x0000910a87c1385247edc82808ec498a2d738fea5f0d3f8801512d6b84ad6f72");
+static const uint256 hashGenesisBlock("0x000009a2087d0a89bc5c0a28b6bd8ea17a2cec76b285501f331f3868f26a7e0e");
+static const uint256 hashGenesisBlockTestNet("0x000009a2087d0a89bc5c0a28b6bd8ea17a2cec76b285501f331f3868f26a7e0e");
 
 
 inline int64_t PastDrift(int64_t nTime)   { return nTime - 10 * 60; } // up to 10 minutes from the past
@@ -109,7 +119,7 @@ bool LoadExternalBlockFile(FILE* fileIn);
 bool CheckProofOfWork(uint256 hash, unsigned int nBits);
 unsigned int GetNextTargetRequired(const CBlockIndex* pindexLast, bool fProofOfStake);
 int64_t GetProofOfWorkReward(int nHeight, int64_t nFees);
-int64_t GetProofOfStakeReward(int64_t nCoinAge, int64_t nFees);
+int64_t GetProofOfStakeReward(int64_t nCoinAge, int64_t nFees, int blkheight);
 unsigned int ComputeMinWork(unsigned int nBase, int64_t nTime);
 unsigned int ComputeMinStake(unsigned int nBase, int64_t nTime, unsigned int nBlockTime);
 int GetNumBlocksOfPeers();
@@ -828,7 +838,7 @@ class CBlock
 {
 public:
     // header
-    static const int CURRENT_VERSION=6;
+    static const int CURRENT_VERSION=1;
     int nVersion;
     uint256 hashPrevBlock;
     uint256 hashMerkleRoot;

@@ -69,6 +69,7 @@ extern CWallet* pwalletMain;
 extern int64_t nLastCoinStakeSearchInterval;
 double GetPoSKernelPS();
 
+#if 0
 #define VERTICAL_TOOBAR_STYLESHEET "QToolBar {\
 border:none;\
 height:100%;\
@@ -105,6 +106,7 @@ border: 1px solid gray;\
     background: 1px solid #302F2F;\
     font-weight: bold;\
 }"
+#endif
 
 ActiveLabel::ActiveLabel(const QString & text, QWidget * parent):
     QLabel(parent){}
@@ -130,7 +132,7 @@ BitcoinGUI::BitcoinGUI(QWidget *parent):
     nWeight(0)
 {
     resize(950, 550);
-    setWindowTitle(tr("ShadowCoin") + " - " + tr("Wallet"));
+    setWindowTitle(tr("SeedCoin") + " - " + tr("Wallet"));
 #ifndef Q_OS_MAC
     qApp->setWindowIcon(QIcon(":icons/bitcoin"));
     setWindowIcon(QIcon(":icons/bitcoin"));
@@ -139,16 +141,6 @@ BitcoinGUI::BitcoinGUI(QWidget *parent):
     QApplication::setAttribute(Qt::AA_DontShowIconsInMenus);
 #endif
 
-    // TODO: Theme switching :)
-    QFile f(":qdarkstyle/style.qss");
-    if (f.exists())
-    {
-        f.open(QFile::ReadOnly | QFile::Text);
-        QTextStream ts(&f);
-        qApp->setStyleSheet(ts.readAll());
-    }
-    else
-        QApplication::setStyle(QStyleFactory::create("Fusion"));
 
     // Accept D&D of URIs
     setAcceptDrops(true);
@@ -295,7 +287,7 @@ void BitcoinGUI::createActions()
     tabGroup->addAction(overviewAction);
 
     sendCoinsAction = new QAction(QIcon(":/icons/send"), tr("&Send coins"), this);
-    sendCoinsAction->setToolTip(tr("Send coins to a ShadowCoin address"));
+    sendCoinsAction->setToolTip(tr("Send coins to a SeedCoin address"));
     sendCoinsAction->setCheckable(true);
     sendCoinsAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_2));
     tabGroup->addAction(sendCoinsAction);
@@ -341,14 +333,14 @@ void BitcoinGUI::createActions()
     quitAction->setToolTip(tr("Quit application"));
     quitAction->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_Q));
     quitAction->setMenuRole(QAction::QuitRole);
-    aboutAction = new QAction(QIcon(":/icons/bitcoin"), tr("&About ShadowCoin"), this);
-    aboutAction->setToolTip(tr("Show information about ShadowCoin"));
+    aboutAction = new QAction(QIcon(":/icons/bitcoin"), tr("&About SeedCoin"), this);
+    aboutAction->setToolTip(tr("Show information about SeedCoin"));
     aboutAction->setMenuRole(QAction::AboutRole);
     aboutQtAction = new QAction(QIcon(":/trolltech/qmessagebox/images/qtlogo-64.png"), tr("About &Qt"), this);
     aboutQtAction->setToolTip(tr("Show information about Qt"));
     aboutQtAction->setMenuRole(QAction::AboutQtRole);
     optionsAction = new QAction(QIcon(":/icons/options"), tr("&Options..."), this);
-    optionsAction->setToolTip(tr("Modify configuration options for ShadowCoin"));
+    optionsAction->setToolTip(tr("Modify configuration options for SeedCoin"));
     optionsAction->setMenuRole(QAction::PreferencesRole);
     toggleHideAction = new QAction(QIcon(":/icons/bitcoin"), tr("&Show / Hide"), this);
     encryptWalletAction = new QAction(QIcon(":/icons/lock_closed"), tr("&Encrypt Wallet..."), this);
@@ -365,8 +357,6 @@ void BitcoinGUI::createActions()
     signMessageAction = new QAction(QIcon(":/icons/edit"), tr("Sign &message..."), this);
     verifyMessageAction = new QAction(QIcon(":/icons/transaction_0"), tr("&Verify message..."), this);
 
-    exportAction = new QAction(QIcon(":/icons/export"), tr("&Export..."), this);
-    exportAction->setToolTip(tr("Export the data in the current tab to a file"));
     openRPCConsoleAction = new QAction(QIcon(":/icons/debugwindow"), tr("&Debug window"), this);
     openRPCConsoleAction->setToolTip(tr("Open debugging and diagnostic console"));
 
@@ -397,7 +387,6 @@ void BitcoinGUI::createMenuBar()
     // Configure the menus
     QMenu *file = appMenuBar->addMenu(tr("&File"));
     file->addAction(backupWalletAction);
-    file->addAction(exportAction);
     file->addAction(signMessageAction);
     file->addAction(verifyMessageAction);
     file->addSeparator();
@@ -420,14 +409,9 @@ void BitcoinGUI::createMenuBar()
 
 void BitcoinGUI::createToolBars()
 {
-    mainIcon = new QLabel (this);
-    mainIcon->setPixmap(QPixmap(":images/sdc-vertical"));
-    mainIcon->show();
-
     mainToolbar = addToolBar(tr("Tabs toolbar"));
     mainToolbar->setObjectName("main");
     mainToolbar->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
-    mainToolbar->addWidget(mainIcon);
     mainToolbar->addAction(overviewAction);
     mainToolbar->addAction(sendCoinsAction);
     mainToolbar->addAction(receiveCoinsAction);
@@ -436,16 +420,8 @@ void BitcoinGUI::createToolBars()
     mainToolbar->addAction(messageAction);
     mainToolbar->setContextMenuPolicy(Qt::NoContextMenu);
 
-    secondaryToolbar = addToolBar(tr("Actions toolbar"));
-    secondaryToolbar->setObjectName("actions");
-    secondaryToolbar->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
-    secondaryToolbar->addAction(exportAction);
-    secondaryToolbar->setContextMenuPolicy(Qt::NoContextMenu);
-
     connect(mainToolbar,      SIGNAL(orientationChanged(Qt::Orientation)), this, SLOT(mainToolbarOrientation(Qt::Orientation)));
-    connect(secondaryToolbar, SIGNAL(orientationChanged(Qt::Orientation)), this, SLOT(secondaryToolbarOrientation(Qt::Orientation)));
     mainToolbarOrientation(mainToolbar->orientation());
-    secondaryToolbarOrientation(secondaryToolbar->orientation());
 }
 
 void BitcoinGUI::setClientModel(ClientModel *clientModel)
@@ -465,7 +441,7 @@ void BitcoinGUI::setClientModel(ClientModel *clientModel)
 #endif
             if(trayIcon)
             {
-                trayIcon->setToolTip(tr("ShadowCoin client") + QString(" ") + tr("[testnet]"));
+                trayIcon->setToolTip(tr("SeedCoin client") + QString(" ") + tr("[testnet]"));
                 trayIcon->setIcon(QIcon(":/icons/toolbar_testnet"));
                 toggleHideAction->setIcon(QIcon(":/icons/toolbar_testnet"));
             }
@@ -542,7 +518,7 @@ void BitcoinGUI::createTrayIcon()
     trayIcon = new QSystemTrayIcon(this);
     trayIconMenu = new QMenu(this);
     trayIcon->setContextMenu(trayIconMenu);
-    trayIcon->setToolTip(tr("ShadowCoin client"));
+    trayIcon->setToolTip(tr("SeedCoin client"));
     trayIcon->setIcon(QIcon(":/icons/toolbar"));
     connect(trayIcon, SIGNAL(activated(QSystemTrayIcon::ActivationReason)),
             this, SLOT(trayIconActivated(QSystemTrayIcon::ActivationReason)));
@@ -612,7 +588,7 @@ void BitcoinGUI::setNumConnections(int count)
     default: icon = ":/icons/connect_4"; break;
     }
     labelConnectionsIcon->setPixmap(QIcon(icon).pixmap(STATUSBAR_ICONSIZE,STATUSBAR_ICONSIZE));
-    labelConnectionsIcon->setToolTip(tr("%n active connection(s) to ShadowCoin network", "", count));
+    labelConnectionsIcon->setToolTip(tr("%n active connection(s) to SeedCoin network", "", count));
 }
 
 void BitcoinGUI::setNumBlocks(int count, int nTotalBlocks)
@@ -846,19 +822,12 @@ void BitcoinGUI::gotoOverviewPage()
 {
     overviewAction->setChecked(true);
     centralWidget->setCurrentWidget(overviewPage);
-
-    exportAction->setEnabled(false);
-    disconnect(exportAction, SIGNAL(triggered()), 0, 0);
 }
 
 void BitcoinGUI::gotoHistoryPage()
 {
     historyAction->setChecked(true);
     centralWidget->setCurrentWidget(transactionsPage);
-
-    exportAction->setEnabled(true);
-    disconnect(exportAction, SIGNAL(triggered()), 0, 0);
-    connect(exportAction, SIGNAL(triggered()), transactionView, SLOT(exportClicked()));
 }
 
 void BitcoinGUI::gotoAddressBookPage()
@@ -866,38 +835,24 @@ void BitcoinGUI::gotoAddressBookPage()
     addressBookAction->setChecked(true);
     centralWidget->setCurrentWidget(addressBookPage);
 
-    exportAction->setEnabled(true);
-    disconnect(exportAction, SIGNAL(triggered()), 0, 0);
-    connect(exportAction, SIGNAL(triggered()), addressBookPage, SLOT(exportClicked()));
 }
 
 void BitcoinGUI::gotoReceiveCoinsPage()
 {
     receiveCoinsAction->setChecked(true);
     centralWidget->setCurrentWidget(receiveCoinsPage);
-
-    exportAction->setEnabled(true);
-    disconnect(exportAction, SIGNAL(triggered()), 0, 0);
-    connect(exportAction, SIGNAL(triggered()), receiveCoinsPage, SLOT(exportClicked()));
 }
 
 void BitcoinGUI::gotoSendCoinsPage()
 {
     sendCoinsAction->setChecked(true);
     centralWidget->setCurrentWidget(sendCoinsPage);
-
-    exportAction->setEnabled(false);
-    disconnect(exportAction, SIGNAL(triggered()), 0, 0);
 }
 
 void BitcoinGUI::gotoMessagePage()
 {
     messageAction->setChecked(true);
     centralWidget->setCurrentWidget(messagePage);
-
-    exportAction->setEnabled(true);
-    disconnect(exportAction, SIGNAL(triggered()), 0, 0);
-    connect(exportAction, SIGNAL(triggered()), messagePage, SLOT(exportClicked()));
 }
 
 void BitcoinGUI::gotoSignMessageTab(QString addr)
@@ -941,7 +896,7 @@ void BitcoinGUI::dropEvent(QDropEvent *event)
         if (nValidUrisFound)
             gotoSendCoinsPage();
         else
-            notificator->notify(Notificator::Warning, tr("URI handling"), tr("URI can not be parsed! This can be caused by an invalid ShadowCoin address or malformed URI parameters."));
+            notificator->notify(Notificator::Warning, tr("URI handling"), tr("URI can not be parsed! This can be caused by an invalid SeedCoin address or malformed URI parameters."));
     }
 
     event->acceptProposedAction();
@@ -956,31 +911,24 @@ void BitcoinGUI::handleURI(QString strURI)
         gotoSendCoinsPage();
     }
     else
-        notificator->notify(Notificator::Warning, tr("URI handling"), tr("URI can not be parsed! This can be caused by an invalid ShadowCoin address or malformed URI parameters."));
+        notificator->notify(Notificator::Warning, tr("URI handling"), tr("URI can not be parsed! This can be caused by an invalid SeedCoin address or malformed URI parameters."));
 }
 
 void BitcoinGUI::mainToolbarOrientation(Qt::Orientation orientation)
 {
     if(orientation == Qt::Horizontal)
     {
-        mainIcon->setPixmap(QPixmap(":images/sdc-horizontal"));
-        mainIcon->show();
-        mainToolbar->setStyleSheet(HORIZONTAL_TOOLBAR_STYLESHEET);
         messageAction->setIconText(tr("&Messages"));
     }
     else
     {
-        mainIcon->setPixmap(QPixmap(":images/sdc-vertical"));
-        mainIcon->show();
-
-        mainToolbar->setStyleSheet(VERTICAL_TOOBAR_STYLESHEET);
         messageAction->setIconText(tr("Encrypted &Messages"));
     }
 }
 
 void BitcoinGUI::secondaryToolbarOrientation(Qt::Orientation orientation)
 {
-    secondaryToolbar->setStyleSheet(orientation == Qt::Horizontal ? HORIZONTAL_TOOLBAR_STYLESHEET : VERTICAL_TOOBAR_STYLESHEET);
+   // secondaryToolbar->setStyleSheet(orientation == Qt::Horizontal ? HORIZONTAL_TOOLBAR_STYLESHEET : VERTICAL_TOOBAR_STYLESHEET);
 }
 
 void BitcoinGUI::setEncryptionStatus(int status)
