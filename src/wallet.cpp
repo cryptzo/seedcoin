@@ -2380,7 +2380,7 @@ bool CWallet::GetStakeWeight(const CKeyStore& keystore, uint64_t& nMinWeight, ui
             bnCoinDayWeight_Calc = pcoin.first->vout[pcoin.second].nValue * nTimeWeight / COIN / (24 * 60 * 60);
         else
         {
-            // All the age requirements check out, so we add accumulated weight to 1. Boost coin weight 1000x
+        //  Add accumulated weight to .9 so coins are eligible to stake sooner. Boost coin weight 1000x
             int nDayTime = 24 * 60 * 60; // Length of a Day
             int nWeightFactor;          // Adjust Weight
             if (GetTime() < 1413504001) nWeightFactor = 1000;             // Human time (UTC): Fri, 17 Oct 2014 00:00:01 UTC -- Boost 1000x
