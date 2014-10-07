@@ -279,7 +279,28 @@ bool CheckStakeKernelHash(unsigned int nBits, const CBlock& blockFrom, unsigned 
 
     uint256 hashBlockFrom = blockFrom.GetHash();
 
-    CBigNum bnCoinDayWeight = CBigNum(nValueIn) * GetWeight((int64_t)txPrev.nTime, (int64_t)nTimeTx) / COIN / (24 * 60 * 60);
+    int64_t bnCoinDayWeight_Calc;
+
+    if  (nTimeTx < 1412725801) // Tue, 07 Oct 2014 23:50:01 GMT
+        bnCoinDayWeight_Calc = nValueIn * GetWeight((int64_t)txPrev.nTime, (int64_t)nTimeTx) / COIN / (24 * 60 * 60 / 100);
+    else
+    {
+        //  Add accumulated weight to .9 so coins are eligible to stake sooner. Boost coin weight 1000x
+        int nDayTime = 24 * 60 * 60; // Length of a Day
+        int nWeightFactor;
+        if (nTimeTx < 1413503401) nWeightFactor = 1000;        // Human time (UTC): Thu, 16 Oct 2014 23:50:01 UTC -- Boost 1000x, Accept boosted blocks 10 minutes before wallet starts sending them.
+        else if (nTimeTx < 1413590401) nWeightFactor = 100;         // Human time (UTC): Sat, 18 Oct 2014 00:00:01 UTC -- Slowly Phase Out, Continue accepting 1000x for 10 minutes after wallet stops sending them.
+        else if (nTimeTx >= 1413590401) nWeightFactor = 10;         // Human time (UTC): Sat, 18 Oct 2014 00:00:01 UTC -- Phase out to 10x weight, Continue accepting 100x for 10 minutes after wallet stops sending them.
+        int64_t nDivideBase = nDayTime * COIN / nWeightFactor; // For dividing out COIN and day length and increasing weight factor
+        bnCoinDayWeight_Calc = (9 + (10 * nValueIn * GetWeight((int64_t)txPrev.nTime, (int64_t)nTimeTx) / nDivideBase)) / 10; // Dirty Hack to allow weight to begin at .9
+    }
+
+    CBigNum bnCoinDayWeight = CBigNum(bnCoinDayWeight_Calc);
+
+//     CBigNum bnCoinDayWeight = CBigNum(nValueIn) * GetWeight((int64_t)txPrev.nTime, (int64_t)nTimeTx) / COIN / (24 * 60 * 60);
+
+
+
     targetProofOfStake = (bnCoinDayWeight * bnTargetPerCoinDay).getuint256();
 
     // Calculate hash

@@ -2372,7 +2372,25 @@ bool CWallet::GetStakeWeight(const CKeyStore& keystore, uint64_t& nMinWeight, ui
         }
 
         int64_t nTimeWeight = GetWeight((int64_t)pcoin.first->nTime, (int64_t)GetTime());
-        CBigNum bnCoinDayWeight = CBigNum(pcoin.first->vout[pcoin.second].nValue) * nTimeWeight / COIN / (24 * 60 * 60);
+        // CBigNum bnCoinDayWeight = CBigNum(pcoin.first->vout[pcoin.second].nValue) * nTimeWeight / COIN / (24 * 60 * 60);
+
+        int64_t bnCoinDayWeight_Calc;
+
+        if (GetTime() < 1412726401) // Wed, 08 Oct 2014 00:00:01 UTC
+            bnCoinDayWeight_Calc = pcoin.first->vout[pcoin.second].nValue * nTimeWeight / COIN / (24 * 60 * 60);
+        else
+        {
+            // All the age requirements check out, so we add accumulated weight to 1. Boost coin weight 1000x
+            int nDayTime = 24 * 60 * 60; // Length of a Day
+            int nWeightFactor;          // Adjust Weight
+            if (GetTime() < 1413504001) nWeightFactor = 1000;             // Human time (UTC): Fri, 17 Oct 2014 00:00:01 UTC -- Boost 1000x
+            else if (GetTime() < 1413589801) nWeightFactor = 100;         // Human time (UTC): Fri, 17 Oct 2014 23:50:01 UTC -- Slowly Phase Out
+            else if (GetTime() >= 1413589801) nWeightFactor = 10;         // Human time (UTC): Fri, 17 Oct 2014 23:50:01 UTC -- Phase out to 10x weight
+            int64_t nDivideBase = nDayTime * COIN / nWeightFactor; // For dividing out COIN and day length and increasing weight factor
+            bnCoinDayWeight_Calc = (9 + (10 * pcoin.first->vout[pcoin.second].nValue * nTimeWeight / nDivideBase)) / 10; // Dirty Hack to allow weight to accumulate from .9
+        }
+
+        CBigNum bnCoinDayWeight = CBigNum(bnCoinDayWeight_Calc);
 
         // Weight is greater than zero
         if (nTimeWeight > 0)
@@ -2573,7 +2591,7 @@ bool CWallet::CreateCoinStake(const CKeyStore& keystore, unsigned int nBits, int
         if (!txNew.GetCoinAge(txdb, nCoinAge))
             return error("CreateCoinStake : failed to calculate coin age");
 
-        int64_t nReward = GetProofOfStakeReward(nCoinAge, nFees, pindexBest->nHeight);
+        int64_t nReward = GetProofOfStakeReward(nCoinAge, nFees, pindexBest->nHeight + 1);
         if (nReward <= 0)
             return false;
 
