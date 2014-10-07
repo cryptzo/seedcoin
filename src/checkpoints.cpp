@@ -28,6 +28,8 @@ namespace Checkpoints
     static MapCheckpoints mapCheckpoints =
         boost::assign::map_list_of
         ( 0,      hashGenesisBlock )
+        ( 3403,   uint256("0x000000000055b9d4876d376097e81ce34506cf148d28b94af13dda0c73944341"))
+
         
     ;
 
@@ -50,8 +52,7 @@ namespace Checkpoints
     {
         MapCheckpoints& checkpoints = (fTestNet ? mapCheckpointsTestnet : mapCheckpoints);
 
-        // return checkpoints.rbegin()->first;
-        return 0;
+        return checkpoints.rbegin()->first;
     }
 
     CBlockIndex* GetLastCheckpoint(const std::map<uint256, CBlockIndex*>& mapBlockIndex)
@@ -63,8 +64,7 @@ namespace Checkpoints
             const uint256& hash = i.second;
             std::map<uint256, CBlockIndex*>::const_iterator t = mapBlockIndex.find(hash);
             if (t != mapBlockIndex.end())
-                // return t->second;
-                return NULL;
+                return t->second;
         }
         return NULL;
     }
