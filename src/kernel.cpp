@@ -271,8 +271,8 @@ bool CheckStakeKernelHash(unsigned int nBits, const CBlock& blockFrom, unsigned 
     if (nTimeTx < txPrev.nTime)  // Transaction timestamp violation
         return error("CheckStakeKernelHash() : nTime violation");
 
-    if (nTimeTx > GetTime() + 10 * 60)
-        return error("CheckStakeKernelHash() : nTime from the Future");
+    if (nTimeTx > GetTime() + 20 * 60)
+        return error("CheckStakeKernelHash() : nTime from way too far in the Future");
 
     unsigned int nTimeBlockFrom = blockFrom.GetBlockTime();
     if (nTimeBlockFrom + nStakeMinAge > nTimeTx) // Min age requirement
