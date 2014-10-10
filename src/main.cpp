@@ -1004,7 +1004,7 @@ int64_t GetProofOfStakeReward(int64_t nCoinAge, int64_t nFees, int blkheight)
 
 
     int64_t nSubsidy;
-    if (pindexBest->nTime > 1412917200) // Fri, 10 Oct 2014 05:00:00 GMT
+    if (pindexBest->nTime > 1413003600) // Fri, 11 Oct 2014 05:00:00 GMT
         nSubsidy = nCoinAge * nCoinReward / COIN / DAYS; // Divide COIN out now instead of in nCoinAge
     else
         nSubsidy = nCoinAge * nCoinReward / DAYS;
@@ -1868,7 +1868,7 @@ bool CTransaction::GetCoinAge(CTxDB& txdb, uint64_t& nCoinAge) const
     }
 
     CBigNum bnCoinDay;
-    if (pindexBest->nTime > 1412961214) // Fri, 10 Oct 2014 05:00:00 GMT
+    if (pindexBest->nTime > 1413003600) // Fri, 11 Oct 2014 05:00:00 GMT
         bnCoinDay = bnCentSecond * CENT / (24 * 60 * 60);  // Divide Coin out later in GetProofOfStakeReward
     else
         bnCoinDay = bnCentSecond * CENT / COIN / (24 * 60 * 60);
