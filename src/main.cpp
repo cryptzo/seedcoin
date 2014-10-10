@@ -1002,7 +1002,13 @@ int64_t GetProofOfStakeReward(int64_t nCoinAge, int64_t nFees, int blkheight)
     else
         nCoinReward = COIN_YEAR_REWARD;
 
-    int64_t nSubsidy = nCoinAge * nCoinReward / DAYS;
+
+    int64_t nSubsidy;
+    if (pindexBest->nTime > 1412917200) // Fri, 10 Oct 2014 05:00:00 GMT
+        nSubsidy = nCoinAge * nCoinReward / COIN / DAYS; // Divide COIN out now instead of in nCoinAge
+    else
+        nSubsidy = nCoinAge * nCoinReward / DAYS;
+
 
     if (fDebug && GetBoolArg("-printcreation"))
         printf("GetProofOfStakeReward(): create=%s nCoinAge=%"PRId64"\n", FormatMoney(nSubsidy).c_str(), nCoinAge);
@@ -1861,7 +1867,12 @@ bool CTransaction::GetCoinAge(CTxDB& txdb, uint64_t& nCoinAge) const
             printf("coin age nValueIn=%"PRId64" nTimeDiff=%d bnCentSecond=%s\n", nValueIn, nTime - txPrev.nTime, bnCentSecond.ToString().c_str());
     }
 
-    CBigNum bnCoinDay = bnCentSecond * CENT / COIN / (24 * 60 * 60);
+    CBigNum bnCoinDay;
+    if (pindexBest->nTime > 1412961214) // Fri, 10 Oct 2014 05:00:00 GMT
+        bnCoinDay = bnCentSecond * CENT / (24 * 60 * 60);  // Divide Coin out later in GetProofOfStakeReward
+    else
+        bnCoinDay = bnCentSecond * CENT / COIN / (24 * 60 * 60);
+
     if (fDebug && GetBoolArg("-printcoinage"))
         printf("coin age bnCoinDay=%s\n", bnCoinDay.ToString().c_str());
     nCoinAge = bnCoinDay.getuint64();
