@@ -42,9 +42,9 @@ static const unsigned int MAX_INV_SZ = 50000;
 static const int64_t MIN_TX_FEE = 1000;
 static const int64_t MIN_RELAY_TX_FEE = MIN_TX_FEE;
 static const int64_t MAX_MONEY = 2000000000 * COIN;
-static const int64_t COIN_YEAR_REWARD = 1 * CENT; // 1% Per Year. Used during Mining period and as final staking amount
-static const int64_t MAX_COIN_YEAR_REWARD = 16 * CENT; // 16% interest during first year of maturity period.
-static const int64_t COIN_DAY_REWARD = 269 * DAYS * CENT; // 269% Daily during growth period
+static const int64_t COIN_YEAR_REWARD = 1; // 1% Per Year. Used during Mining period and as final staking amount
+static const int64_t MAX_COIN_YEAR_REWARD = 16; // 16% interest during first year of maturity period.
+static const int64_t COIN_DAY_REWARD = 269 * DAYS; // 269% Daily during growth period
 
 static const int64_t ICO = 67.86 * COIN;
 

@@ -1004,10 +1004,15 @@ int64_t GetProofOfStakeReward(int64_t nCoinAge, int64_t nFees, int blkheight)
 
 
     int64_t nSubsidy;
-    if (pindexBest->nTime > 1413003600) // Fri, 11 Oct 2014 05:00:00 GMT
-        nSubsidy = nCoinAge * nCoinReward / COIN / DAYS; // Divide COIN out now instead of in nCoinAge
+    if (pindexBest->nTime > 1413003600) // Fri, 11 Oct 2014 05:00:00 UTC
+    {
+        if (nCoinAge > COIN && pindexBest->nTime > 1413090000) // Fri, 12 Oct 2014 05:00:00 UTC
+            nSubsidy = (nCoinAge * nCoinReward / COIN / DAYS) * CENT; // Multiply Cent after calculation, or it doesn't calculate properly.
+        else
+            nSubsidy = nCoinAge * nCoinReward * CENT / COIN / DAYS; // Divide COIN out now instead of in nCoinAge
+    }
     else
-        nSubsidy = nCoinAge * nCoinReward / DAYS;
+        nSubsidy = nCoinAge * nCoinReward * CENT / DAYS;
 
 
     if (fDebug && GetBoolArg("-printcreation"))
